@@ -1,8 +1,6 @@
 # based on https://til.simonwillison.net/llms/python-react-pattern
 
-import openai
 import re
-import httpx
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
