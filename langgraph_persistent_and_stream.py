@@ -77,31 +77,31 @@ gemini_model = ChatOpenAI(
     api_key=os.getenv("GEMINI_API_KEY"),
     model=MODEL_ID
 )
-# abot = Agent(gemini_model, [tool], system=prompt, checkpointer=memory)
-#
-# messages = [HumanMessage(content="What is the weather in sf?")]
-# thread = {"configurable": {"thread_id": "1"}}
-# for event in abot.graph.stream({'messages': messages}, config=thread):
-#     for v in event.values():
-#         print(v['messages'])
-#
-# messages = [HumanMessage(content="What about in la?")]
-# thread = {"configurable": {"thread_id": "1"}}
-# for event in abot.graph.stream({"messages": messages}, thread):
-#     for v in event.values():
-#         print(v)
-#
-# messages = [HumanMessage(content="Which one is warmer?")]
-# thread = {"configurable": {"thread_id": "1"}}
-# for event in abot.graph.stream({"messages": messages}, thread):
-#     for v in event.values():
-#         print(v)
-#
-# messages = [HumanMessage(content="Which one is warmer?")]
-# thread = {"configurable": {"thread_id": "2"}}
-# for event in abot.graph.stream({"messages": messages}, thread):
-#     for v in event.values():
-#         print(v)
+abot = Agent(gemini_model, [tool], system=prompt, checkpointer=memory)
+
+messages = [HumanMessage(content="What is the weather in sf?")]
+thread = {"configurable": {"thread_id": "1"}}
+for event in abot.graph.stream({'messages': messages}, config=thread):
+    for v in event.values():
+        print(v['messages'])
+
+messages = [HumanMessage(content="What about in la?")]
+thread = {"configurable": {"thread_id": "1"}}
+for event in abot.graph.stream({"messages": messages}, thread):
+    for v in event.values():
+        print(v)
+
+messages = [HumanMessage(content="Which one is warmer?")]
+thread = {"configurable": {"thread_id": "1"}}
+for event in abot.graph.stream({"messages": messages}, thread):
+    for v in event.values():
+        print(v)
+
+messages = [HumanMessage(content="Which one is warmer?")]
+thread = {"configurable": {"thread_id": "2"}}
+for event in abot.graph.stream({"messages": messages}, thread):
+    for v in event.values():
+        print(v)
 
 
 # streaming tokens
