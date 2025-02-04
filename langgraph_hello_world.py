@@ -34,7 +34,7 @@ class Agent:
             self.action_exists,
             {True: 'action', False: END}
         )
-        graph.add_edge('llm', 'action')
+        graph.add_edge("action", "llm")
         graph.set_entry_point('llm')
         self.graph = graph.compile()
         self.tools = {t.name: t for t in tools}
